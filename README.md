@@ -1,14 +1,3 @@
-
-### kubect-pods:
-This is a plugin that allows you to learn which deployment uses key stored in a configmap.
-kubectl itself has `rollout restart` subcommand [[1](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-restart-em-)] in version >1.15 which can be used as follow:
-
-```
-kubectl rollout restart deployment/nginx
-```
-
-
-
 # kubect-pods
 
 Helps you to get deployments which deal with the key in the configmap. Sometimes config-key changesmay require restart some applications. Using this method gives you a list of application which you concern. 
@@ -24,6 +13,7 @@ kubectl pods version
 
 # Help
 kubectl pods --help
+
 kubectl pods --h
 
 ### Usage
