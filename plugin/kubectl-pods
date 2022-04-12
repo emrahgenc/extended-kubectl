@@ -1,5 +1,17 @@
 #!/bin/bash -e
 
+
+function usage {
+    echo "kubectl pods"
+    echo "  get"
+    echo "     -c|--config|--configmap   [required]  The configmap name which stores the concerned key"
+    echo "     -n|--namespace            [optional]  Defaults to current namespace"
+    echo "     -k|--key                  [required]  Concerned key"    
+    echo "Example:"
+    echo "kubectl pods get --config config-x --key key-y --namespace team-z"
+}
+
+
 METHOD=""
 NAMESPACE=default
 CONFIG_MAP=""
@@ -29,6 +41,10 @@ while [[ $# -gt 0 ]]; do
       CONFIG_MAP=$2
       shift # past argument
       shift # past value
+      ;;
+    -h|--help) 
+      usage; 
+      exit 0
       ;;
     --default)
       NAMESPACE=default
