@@ -11,6 +11,10 @@ while [[ $# -gt 0 ]]; do
       METHOD="get"
       shift
       ;;
+    version)
+      METHOD="version"
+      shift
+      ;;
     -n|--namespace)
       NAMESPACE="$2"
       shift # past argument
@@ -57,8 +61,8 @@ case $METHOD in
     getpods
     ;;
 
-  "Restart")
-    echo restart
+  "version")
+    echo "Version 1.0.0"
     ;;  
 esac
 
