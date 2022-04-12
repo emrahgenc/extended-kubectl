@@ -16,7 +16,7 @@ Helps you to get deployments which deal with the key in the configmap. Sometimes
 ### Installation
 ```bash
 curl -sLo kubectl-pods https://raw.githubusercontent.com/emrahgenc/extended-kubectl/master/plugin/kubectl-pods && \
-  chmod +x kubectl-pods && mv -i kubectl-rotate_pods /usr/local/bin
+  chmod +x kubectl-pods && mv -i kubectl-pods /usr/local/bin
 
 # Verify
 kubectl pods version
