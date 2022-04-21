@@ -1,34 +1,55 @@
-# kubect-pods
+# kubect-deployments
 
-Helps you to get deployments which deal with the key in the configmap. Sometimes config-key changesmay require restart some applications. Using this method gives you a list of application which you concern. 
+Helps you to get/restart deployments which deal with the key in the configmap. Sometimes config-key changes may require restart some applications. Using this method gives you a list of application which you concern. 
 
 ### Installation
 ```bash
-curl -sLo kubectl-pods https://raw.githubusercontent.com/emrahgenc/extended-kubectl/master/plugin/kubectl-pods && \
-  chmod +x kubectl-pods && mv -i kubectl-pods /usr/local/bin
+curl -sLo kubectl-deployments https://raw.githubusercontent.com/emrahgenc/extended-kubectl/master/plugin/kubectl-deployments && \
+  chmod +x kubectl-deployments && mv -i kubectl-deployments /usr/local/bin
 
 # Verify
-kubectl pods version
+kubectl deployments version
 ```
 
-# Help
-kubectl pods --help
+### Help
+```bash
+kubectl deployments --help
+# or
+kubectl deployments --h
+```
 
-kubectl pods --h
-
-### Usage
+### Get
 ```bash
 # simple
-kubectl pods get sample-config sample-config-key
+kubectl deployments get sample-config sample-config-key
 
-kubectl pods get sample-config sample-config-key -n custom-namespace
+kubectl deployments get sample-config sample-config-key -n custom-namespace
 
-kubectl pods get sample-config sample-config-key --custom-namespace
+kubectl deployments get sample-config sample-config-key --custom-namespace
 
 
 # advanced
-kubectl pods get \
+kubectl deployments get \
   --configmap sample-config \
   --key sample-key \
   --namespace custom-namespace
 ```
+#### Information: Without using a key this method gets the deployments which uses a config-map file inside.
+
+### Restart
+```bash
+# simple
+kubectl deployments restart sample-config sample-config-key
+
+kubectl deployments restart sample-config sample-config-key -n custom-namespace
+
+kubectl deployments restart sample-config sample-config-key --custom-namespace
+
+
+# advanced
+kubectl deployments restart \
+  --configmap sample-config \
+  --key sample-key \
+  --namespace custom-namespace
+```
+#### Information: Without using a key this method restarts the deployments which uses a config-map file inside.
