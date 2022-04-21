@@ -34,7 +34,7 @@ kubectl deployments get \
   --key sample-key \
   --namespace custom-namespace
 ```
-#### Information: Without using a key this method gets the deployments which uses a config-map file inside.
+:exclamation: - Without using a key this method gets the deployments which uses a config-map file inside.
 
 ### Restart
 ```bash
@@ -52,4 +52,4 @@ kubectl deployments restart \
   --key sample-key \
   --namespace custom-namespace
 ```
-#### Information: Without using a key this method restarts the deployments which uses a config-map file inside.
+:exclamation: -  Information: Without using a key this method restarts the deployments which uses a config-map file inside.
